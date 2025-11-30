@@ -1,0 +1,87 @@
+<!-- Save as: index.html -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bachat Khata — Demo Banking UI</title>
+  <meta name="description" content="Bachat Khata — polished educational banking demo. Local-only storage." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site">
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">BK</div>
+        <div>
+          <h1 class="brand-title">Bachat Khata</h1>
+          <p class="brand-sub">Educational demo — local only</p>
+        </div>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="?page=home" class="nav-link">Home</a>
+        <a href="?page=features" class="nav-link">Features</a>
+        <a href="?page=help" class="nav-link">Help</a>
+        <a href="?page=contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-ctas">
+        <button id="openLogin" class="btn btn-ghost">Log in</button>
+        <button id="openSignup" class="btn btn-primary">Create demo account</button>
+      </div>
+    </header>
+
+    <div class="alert" role="status">
+      <strong>SIMULATION:</strong> This is a fictional local-only demo for training. Do NOT use real credentials.
+    </div>
+
+    <main id="app" class="layout">
+      <!-- left column: dynamic main content -->
+      <section class="main-panel" id="mainPanel" aria-live="polite">
+        <!-- content injected by app.js -->
+      </section>
+
+      <!-- right column: quick actions -->
+      <aside class="side-panel">
+        <div class="card compact">
+          <h4>Quick Demo Login</h4>
+          <input id="quickEmail" class="field" placeholder="demo@example.com" aria-label="Email">
+          <input id="quickPass" class="field" type="password" placeholder="Password" aria-label="Password">
+          <div class="row">
+            <button id="quickLoginBtn" class="btn btn-primary">Login</button>
+            <button id="quickSignupBtn" class="btn btn-ghost">Sign up</button>
+          </div>
+          <p class="muted">Demo accounts stored in browser localStorage under <code>bk_demo_users</code>.</p>
+        </div>
+
+        <div class="card compact">
+          <h4>Guided Simulation</h4>
+          <p class="muted">Run a short, safe phishing checklist to practise identifying suspicious items.</p>
+          <button id="launchSim" class="btn btn-outline">Start simulation</button>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <div>© 2025 Bachat Khata — educational demo. Not a real bank.</div>
+      <div class="muted">For coursework only • No personal data sent</div>
+    </footer>
+  </div>
+
+  <!-- Modal -->
+  <div id="modalBackdrop" class="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h3 id="modalTitle">Message</h3>
+      <div id="modalBody"></div>
+      <div class="modal-actions">
+        <button id="modalClose" class="btn btn-ghost">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
